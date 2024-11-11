@@ -2,6 +2,7 @@ from PIL import Image, ImageEnhance, ImageFilter,ImageOps
 import requests
 from io import BytesIO
 from PIL import ImageOps
+from matplotlib import pyplot as plt
 
 
 DIMENSIONS = {
@@ -52,10 +53,6 @@ def adjust_contrast(image, output_path="imagen_con_contraste.jpg"):
     return equalized_img
 
 
-
-from matplotlib import pyplot as plt
-
-
 FILTERS = {
     "BLUR": ImageFilter.BLUR,
     "CONTOUR": ImageFilter.CONTOUR,
@@ -88,7 +85,6 @@ def apply_filter(image, filter_name, output_path="imagen_filtrada.jpg"):
     return filtered_img
 
 
-from PIL import ImageFilter
 
 def create_sketch(image, persona,output_path="sketch_de_imagen.jpg"):
     if persona:
